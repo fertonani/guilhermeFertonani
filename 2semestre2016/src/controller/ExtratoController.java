@@ -47,7 +47,7 @@ public class ExtratoController extends ExtratoForm {
 			JTable tabela = getTable();
 			DefaultTableModel modelo = (DefaultTableModel) tabela.getModel();
 			modelo.setRowCount(0);
-			for (int i = 0; i < extrato.getLista().size(); i++) {
+			/*for (int i = 0; i < extrato.getLista().size(); i++) {
 				DecimalFormat fmt = new DecimalFormat("#,###.00");
 				SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 				String data = format.format(extrato.getLista().get(i).getData());
@@ -56,7 +56,7 @@ public class ExtratoController extends ExtratoForm {
 				String valor = "R$" + fmt.format(extrato.getLista().get(i).getValor());
 				String saldo = "R$" + fmt.format(extrato.getSaldo(0, i + 1));
 				modelo.addRow(new Object[] { data, c, numDoc, valor, saldo });
-			}
+			}*/
 		}
 	}
 
@@ -74,7 +74,7 @@ public class ExtratoController extends ExtratoForm {
 			JTable tabela = getTable();
 			DefaultTableModel modelo = (DefaultTableModel) tabela.getModel();
 			modelo.setRowCount(0);
-			for (int i = 0; i < extrato.getLista().size(); i++) {
+			/*for (int i = 0; i < extrato.getLista().size(); i++) {
 				DecimalFormat fmt = new DecimalFormat("#,###.00");
 				SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 				String data = format.format(extrato.getLista().get(i).getData());
@@ -83,7 +83,7 @@ public class ExtratoController extends ExtratoForm {
 				String valor = "R$" + fmt.format(extrato.getLista().get(i).getValor());
 				String saldo = "R$" + fmt.format(extrato.getSaldo(0, i + 1));
 				modelo.addRow(new Object[] { data, c, numDoc, valor, saldo });
-			}
+			}*/
 		}
 	}
 
@@ -101,7 +101,7 @@ public class ExtratoController extends ExtratoForm {
 				JTable tabela = getTable();
 				DefaultTableModel modelo = (DefaultTableModel) tabela.getModel();
 				modelo.setRowCount(0);
-				for (int i = 0; i < extrato.getLista().size(); i++) {
+				/*for (int i = 0; i < extrato.getLista().size(); i++) {
 					DecimalFormat fmt = new DecimalFormat("#,###.00");
 					SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 					String data = format.format(extrato.getLista().get(i).getData());
@@ -110,7 +110,7 @@ public class ExtratoController extends ExtratoForm {
 					String valor = "R$" + fmt.format(extrato.getLista().get(i).getValor());
 					String saldo = "R$" + fmt.format(extrato.getSaldo(0, i + 1));
 					modelo.addRow(new Object[] { data, c, numDoc, valor, saldo });
-				}
+				}*/
 			}
 		}
 	}

@@ -2,6 +2,7 @@ package model;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Observable;
 
@@ -34,11 +35,10 @@ public class Extrato extends Observable {
 		this.valor = valor;
 
 	}
-
 	public Date getData() {
 		return data;
 	}
-
+	
 	public void setData(Date data) {
 		this.data = data;
 	}
@@ -75,8 +75,10 @@ public class Extrato extends Observable {
 		this.idHistorico = idHistorico;
 	}
 
-	public ArrayList<Extrato> getLista() {
-		return listaExtrato;
+	public ArrayList<Extrato> getLista(Date de, Date ate) {
+		ArrayList<Extrato> lista = new ArrayList<Extrato>();
+		lista = movimento.carregarExtrato(de, ate);
+		return lista;
 	}
 
 	public void setLista(ArrayList<Extrato> e) {
@@ -110,7 +112,7 @@ public class Extrato extends Observable {
 		to.setIdHistorico(idHistorico);
 		to.setData(data);
 		to.setConta(conta);
-		//to.setListaExtrato(listaExtrato);
+		to.setListaExtrato(listaExtrato);
 		to.setMovimento(movimento);
 		to.setNumDoc(numDoc);
 		to.setTipo(tipo);

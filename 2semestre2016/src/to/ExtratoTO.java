@@ -1,17 +1,19 @@
 package to;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import dao.MovimentoDAO;
 import model.Conta;
+import model.Extrato;
 
 public class ExtratoTO {
 	private Date data;
 	private char tipo;
 	private int numDoc, idHistorico;
 	private double valor;
-	private ArrayList<ExtratoTO> listaExtrato;
+	private ArrayList<Extrato> listaExtrato;
 	private Conta conta;
 	private MovimentoDAO movimento;
 	private double saldo;
@@ -23,6 +25,9 @@ public class ExtratoTO {
 		this.numDoc = numDoc;
 		this.valor = valor;
 
+	}
+	public ExtratoTO(){
+		
 	}
 
 	public Date getData() {
@@ -65,15 +70,14 @@ public class ExtratoTO {
 		this.valor = valor;
 	}
 
-	public ArrayList<ExtratoTO> getListaExtrato() {
-		return listaExtrato;
-	}
 
-	public void setListaExtrato(ArrayList<ExtratoTO> listaExtrato) {
+	public void setListaExtrato(ArrayList<Extrato> listaExtrato) {
 		this.listaExtrato = listaExtrato;
 	}
-	
 
+	public ArrayList<Extrato> getLista(){
+		return listaExtrato;
+	}
 	public Conta getConta() {
 		return conta;
 	}

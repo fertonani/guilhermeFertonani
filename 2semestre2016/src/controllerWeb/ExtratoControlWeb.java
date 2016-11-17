@@ -40,36 +40,29 @@ public class ExtratoControlWeb extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try {
-			login = new Login(request.getParameter("agencia"), request.getParameter("conta"), "1111", "111", true);
-			System.out.println("login");
-		} catch (SQLException e2) {
-			e2.printStackTrace();
-		}
-		try {
-			conta = new Conta(login, true);
-			System.out.println("conta");
-		} catch (SQLException e2) {
-			e2.printStackTrace();
-		}
-		Calendar agora = Calendar.getInstance();
-		Calendar aux = Calendar.getInstance();
-		aux.add(Calendar.DATE, -360);
-		try {
-			extrato = new Extrato(conta, aux.getTime(), agora.getTime());
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		PrintWriter out = response.getWriter();
-		out.println("<html><head><title>Extratando</title></head><body>");
-		out.println("<table><tr><td>Transacao</td> <td> Data</td> <td> Tipo </td><td> Valor </td></tr>");
+		/*
+		 * try { login = new Login(request.getParameter("agencia"),
+		 * request.getParameter("conta"), "1111", "111", true);
+		 * System.out.println("login"); } catch (SQLException e2) {
+		 * e2.printStackTrace(); } try { conta = new Conta(login, true);
+		 * System.out.println("conta"); } catch (SQLException e2) {
+		 * e2.printStackTrace(); } Calendar agora = Calendar.getInstance();
+		 * Calendar aux = Calendar.getInstance(); aux.add(Calendar.DATE, -360);
+		 * try { extrato = new Extrato(conta, aux.getTime(), agora.getTime()); }
+		 * catch (SQLException e) { e.printStackTrace(); } PrintWriter out =
+		 * response.getWriter();
+		 * out.println("<html><head><title>Extratando</title></head><body>");
+		 * out.println(
+		 * "<table><tr><td>Transacao</td> <td> Data</td> <td> Tipo </td><td> Valor </td></tr>"
+		 * );
+		 * 
+		 * for (int i = 0; i < extrato.getLista().size(); i++) {
+		 * out.println("<tr><td>" + extrato.getLista().get(i).getNumDoc() +
+		 * "</td><td>" + extrato.getLista().get(i).getData() + "</td><td>" +
+		 * extrato.getLista().get(i).getTipo() + "</td><td>" +
+		 * extrato.getLista().get(i).getValor() + "</td></tr>"); }
+		 * out.println("</table></body><html>"); }
+		 */
 
-		for (int i = 0; i < extrato.getLista().size(); i++) {
-			out.println("<tr><td>" + extrato.getLista().get(i).getNumDoc() + "</td><td>"
-					+ extrato.getLista().get(i).getData() + "</td><td>" + extrato.getLista().get(i).getTipo()
-					+ "</td><td>" + extrato.getLista().get(i).getValor() + "</td></tr>");
-		}
-		out.println("</table></body><html>");
 	}
-
 }
